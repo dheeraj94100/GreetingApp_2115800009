@@ -3,7 +3,6 @@ using BusinessLayer.Interface;
 using ModelLayer.Model;
 using RepositoryLayer.Interface;
 
-
 namespace BusinessLayer.Service
 {
     public class GreetingBL : IGreetingBL
@@ -44,6 +43,11 @@ namespace BusinessLayer.Service
             response.Greeting = result.Greeting;
 
             return response;
+        }
+
+        public GreetingModel GetGreetingById(int id)
+        {
+            return _greetingRL.GetGreetingById(id);
         }
     }
 }
