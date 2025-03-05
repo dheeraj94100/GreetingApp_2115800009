@@ -8,10 +8,7 @@ namespace ModelLayer.Model
 {
     public class ResponseModel<T>
     {
-        //smd type 
-        //data :string type
-        //bool
-        //Generic
+        //SMD type 
 
         public bool Success { get; set; } = false;
         public string Message { get; set; } = "";
