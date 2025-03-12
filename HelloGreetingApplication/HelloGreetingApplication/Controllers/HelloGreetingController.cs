@@ -21,6 +21,7 @@ namespace HelloGreetingApplication.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            throw new Exception("Hello Exception");
             logger.Info("HTTP GET request called");
             var greeting = _greetingBL.GetGreeting();
             var data = new
