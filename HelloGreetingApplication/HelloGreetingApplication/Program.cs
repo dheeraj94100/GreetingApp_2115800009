@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Middlewares.GlobalExceptionHandler;
 using NLog;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
@@ -39,6 +40,7 @@ try
 
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseMiddleware<GlobalExceptionMiddleware>();
 
 
     app.UseAuthorization();
