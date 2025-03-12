@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RepositoryLayer.Entity;
 
 namespace RepositoryLayer.Context
 {
@@ -13,6 +14,7 @@ namespace RepositoryLayer.Context
         {
 
         }
-        public virtual DbSet<Entity.GreetingEntity> Greetings { get; set; }
+        public virtual DbSet<GreetingEntity> Greetings { get; set; }
+        public virtual DbSet<UserEntity> Users { get; set; }
     }
 }

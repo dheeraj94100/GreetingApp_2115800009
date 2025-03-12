@@ -8,8 +8,10 @@ using Microsoft.Extensions.Hosting;
 using Middlewares.GlobalExceptionHandler;
 using NLog;
 using RepositoryLayer.Context;
+using RepositoryLayer.Hashing;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
+using RepositoryLayer.Hashing;
 
 
 var logger = LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
@@ -30,6 +32,9 @@ try
 
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
     builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+    builder.Services.AddScoped<IUserBL, UserBL>();
+    builder.Services.AddScoped<IUserRL, UserRL>();
+    builder.Services.AddScoped<Password_Hash>();
 
     var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
     builder.Services.AddDbContext<HelloGreetingContext>(options => options.UseSqlServer(connectionString));
